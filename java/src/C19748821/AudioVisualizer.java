@@ -90,3 +90,18 @@ public class AudioVisualizer extends Visual {
 
         for(Circle circle : circles){
             circle.update(circles, getAudioPlayer().mix.get(2));
+
+                        //changing circle's radius and speed based on frequency of sound
+                        circle.radius = (radiusSoundFreq * radiusSoundFreqSpeed);
+                        circle.speed = circle.speed + ((speedSoundFreq * speedSoundFreqSpeed) / 4);
+            
+                        //setting stroke based on the mix
+                        float hue = map(mixSound * 1000, -400, 300, 0, 255);
+                        stroke(hue, 255, 255);
+                        strokeWeight(2);
+            
+                        //drawing lines from center to the circle
+                        line(0, 0, circle.xPos, circle.yPos);
+                        strokeWeight(1);
+                    }
+                }
