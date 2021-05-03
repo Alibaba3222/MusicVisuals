@@ -14,8 +14,10 @@ import processing.awt.PSurfaceAWT.SmoothCanvas;
 import processing.core.*;
 import static processing.core.PConstants.HSB;
 
-
-
+/**
+ *
+ * @author Majey
+ */
 @SuppressWarnings("serial")
 public class AudioVisualizer extends Visual {
     public static int screenWidth = 1280, screenHeight = 720;
@@ -40,7 +42,7 @@ public class AudioVisualizer extends Visual {
 
         //starting minim
         startMinim();
-        song = "heroplanet.mp3";
+        song = "infraction.mp3";
         loadAudio(song);
 
         //starting the song
@@ -74,7 +76,6 @@ public class AudioVisualizer extends Visual {
         }
     }
 
-    
     @Override
     public void draw(){
         translate(screenWidth/2, screenHeight/2);
@@ -91,17 +92,27 @@ public class AudioVisualizer extends Visual {
         for(Circle circle : circles){
             circle.update(circles, getAudioPlayer().mix.get(2));
 
-                        //changing circle's radius and speed based on frequency of sound
-                        circle.radius = (radiusSoundFreq * radiusSoundFreqSpeed);
-                        circle.speed = circle.speed + ((speedSoundFreq * speedSoundFreqSpeed) / 4);
-            
-                        //setting stroke based on the mix
-                        float hue = map(mixSound * 1000, -400, 300, 0, 255);
-                        stroke(hue, 255, 255);
-                        strokeWeight(2);
-            
-                        //drawing lines from center to the circle
-                        line(0, 0, circle.xPos, circle.yPos);
-                        strokeWeight(1);
-                    }
-                }
+            //changing circle's radius and speed based on frequency of sound
+            circle.radius = (radiusSoundFreq * radiusSoundFreqSpeed);
+            circle.speed = circle.speed + ((speedSoundFreq * speedSoundFreqSpeed) / 4);
+
+            //setting stroke based on the mix
+            float hue = map(mixSound * 1000, -400, 300, 0, 255);
+            stroke(hue, 255, 255);
+            strokeWeight(2);
+
+            //drawing lines from center to the circle
+            line(0, 0, circle.xPos, circle.yPos);
+            strokeWeight(1);
+        }
+    }
+
+    @Override
+    public void stop(){
+        // always close Minim audio classes when you finish with them
+        getAudioPlayer().close();
+
+        super.stop();
+    }
+
+}
