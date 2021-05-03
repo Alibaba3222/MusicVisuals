@@ -1,7 +1,6 @@
 package C19748821;
 
 
-import ddf.minim.AudioInput;
 import ddf.minim.AudioOutput;
 import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
@@ -14,10 +13,7 @@ import processing.awt.PSurfaceAWT.SmoothCanvas;
 import processing.core.*;
 import static processing.core.PConstants.HSB;
 
-/**
- *
- * @author Majey
- */
+
 @SuppressWarnings("serial")
 public class AudioVisualizer extends Visual {
     public static int screenWidth = 1280, screenHeight = 720;
@@ -42,7 +38,7 @@ public class AudioVisualizer extends Visual {
 
         //starting minim
         startMinim();
-        song = "infraction.mp3";
+        song = "Infraction.mp3";
         loadAudio(song);
 
         //starting the song
@@ -67,7 +63,7 @@ public class AudioVisualizer extends Visual {
         //using tab key for play/pause
         if (key == TAB) {
             if (!playIt) {
-                etAudioPlayer().play();
+                getAudioPlayer().play();
                 playIt = true;
             }else{
                 getAudioPlayer().pause();
@@ -116,3 +112,4 @@ public class AudioVisualizer extends Visual {
     }
 
 }
+

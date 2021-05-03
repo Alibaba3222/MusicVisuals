@@ -34,8 +34,8 @@ public class Circle{
         angle += speed;
 
         //determining the x and y pos of circle based on the sound frequency value
-        xPos = (float) Math.cos(gfx.radians(angle)) * roundRadius * 5f;
-        yPos = (float) Math.sin(gfx.radians(angle)) * roundRadius * 3f;
+        xPos = (float) Math.cos(PApplet.radians(angle)) * roundRadius * 5f;
+        yPos = (float) Math.sin(PApplet.radians(angle)) * roundRadius * 3f;
 
         for (Circle ball : balls) {
             if (ball != this) {
