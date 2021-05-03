@@ -1,10 +1,5 @@
 package C19748821;
 
-public class AudioVisualizer {
-    
-}
-package C19748821;
-
 
 import ddf.minim.AudioInput;
 import ddf.minim.AudioOutput;
@@ -63,3 +58,35 @@ public class AudioVisualizer extends Visual {
         }
 
     }
+
+    @Override
+    public void keyReleased() {
+
+        //using tab key for play/pause
+        if (key == TAB) {
+            if (!playIt) {
+                etAudioPlayer().play();
+                playIt = true;
+            }else{
+                getAudioPlayer().pause();
+                playIt = false;
+            }
+        }
+    }
+
+    
+    @Override
+    public void draw(){
+        translate(screenWidth/2, screenHeight/2);
+        background(backgroundImage);
+        stroke(255);
+
+        //getting values of mix and frequencies from the audio player
+        float mixSound = getAudioPlayer().mix.get(2);
+        float radiusSoundFreq = getAudioPlayer().left.get(2);
+        float speedSoundFreq = getAudioPlayer().right.get(2);
+        float radiusSoundFreqSpeed = 200;
+        float speedSoundFreqSpeed = 1;
+
+        for(Circle circle : circles){
+            circle.update(circles, getAudioPlayer().mix.get(2));
