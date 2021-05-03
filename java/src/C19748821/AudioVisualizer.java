@@ -1,20 +1,13 @@
 package C19748821;
 
 
-import ddf.minim.AudioOutput;
-import ddf.minim.AudioPlayer;
-import ddf.minim.Minim;
-import ddf.minim.analysis.FFT;
-import java.io.File;
-import javax.swing.JFrame;
+
+
 
 import ie.tudublin.Visual;
-import processing.awt.PSurfaceAWT.SmoothCanvas;
 import processing.core.*;
-import static processing.core.PConstants.HSB;
 
 
-@SuppressWarnings("serial")
 public class AudioVisualizer extends Visual {
     public static int screenWidth = 1280, screenHeight = 720;
 
