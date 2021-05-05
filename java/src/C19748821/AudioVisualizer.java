@@ -1,15 +1,11 @@
 package C19748821;
 
-
-
-
-
 import ie.tudublin.Visual;
 import processing.core.*;
 
 
 public class AudioVisualizer extends Visual {
-    public static int screenWidth = 1280, screenHeight = 720;
+    public static int screenWidth = 1920, screenHeight = 1080;
 
     @Override
     public void settings() {
