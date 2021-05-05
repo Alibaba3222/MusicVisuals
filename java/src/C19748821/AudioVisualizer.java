@@ -14,7 +14,7 @@ public class AudioVisualizer extends Visual {
 
 
     String song;
-    int circleCount = 10;
+    int circleCount = 16;
     Circle[] circles = new Circle[circleCount];
     boolean playIt = false;
     PImage backgroundImage;
@@ -37,9 +37,9 @@ public class AudioVisualizer extends Visual {
         //initializing the array of circles randomly and giving each circle random attributes
         for(int i = 0; i < circles.length; i++){
             circles[i] = new Circle(this);
-            circles[i].speed = random(1, 3);
+            circles[i].speed = random(1, 4);
             circles[i].angle = random(360);
-            circles[i].roundRadius = random(10, height/8);
+            circles[i].roundRadius = random(12, height/10);
             circles[i].radius = random(10, height/30);
             circles[i].fillCircle = 1;
         }
@@ -88,7 +88,7 @@ public class AudioVisualizer extends Visual {
 
             //drawing lines from center to the circle
             line(0, 0, circle.xPos, circle.yPos);
-            strokeWeight(1);
+            strokeWeight(0);
         }
     }
 
