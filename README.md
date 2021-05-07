@@ -5,7 +5,8 @@ Name: Ali Ananzeh
 Student Number: C19748821
 
 # Assignment Discription
-![my image](images/project.png)
+![image](https://user-images.githubusercontent.com/72251197/117396434-dfcc6d80-aef1-11eb-8377-96548bf43ef2.png)
+
 
 Created a audio visualizer, for the intent purpose to test what I have learned within the course. This is a java based code that uses shapes and graphics in java to create a moving array of shapes and colors that stimulate the senses, The graphics interact to the musics frequencies. The speed also alternates to the speed of the music. This hopefully will be a barrage of wonderful colors. 
 
@@ -15,7 +16,7 @@ Created a audio visualizer, for the intent purpose to test what I have learned w
 - You can execute the code from the file AudioVisualizer.java fouind in :MusicVisuals\java\src\c19748821
 
 # How the program works
-[![YouTube](img.https://www.youtube.com/watch?v=H9v1E1FZ_U0/0.jpg)](https://www.youtube.com/watch?v=H9v1E1FZ_U0)
+[![YouTube]()](https://www.youtube.com/watch?v=H9v1E1FZ_U0)
 
 Above is a showcase video.
 
@@ -80,7 +81,8 @@ The end product is that a mesh is produced which rotates and changes it’s size
 Getting a better understanding go git, understanding the effectivness of committing and the ability to use  git a lot better.
 Creating a Mesh like structure around in my code to make this intricate design.
 
-![Gitbash image](images/myimage.png)
+![image](https://user-images.githubusercontent.com/72251197/117396468-f246a700-aef1-11eb-88a0-1752c094ed25.png)
+
 
 
 |Some stuff | Some more stuff in this column |
