@@ -1,89 +1,87 @@
-# Music Visualiser Project
+# Music Visualiser Project 2021
 
-Name:
+Name: Ali Ananzeh
 
-Student Number: 
+Student Number: C19748821
 
-## Instructions
-- Fork this repository and use it a starter project for your assignment
-- Create a new package named your student number and put all your code in this package.
-- You should start by creating a subclass of ie.tudublin.Visual
-- There is an example visualiser called MyVisual in the example package
-- Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
+# Assignment Discription
+![my image](images/project.png)
 
-# Description of the assignment
+Created a audio visualizer, for the intent purpose to test what I have learned within the course. This is a java based code that uses shapes and graphics in java to create a moving array of shapes and colors that stimulate the senses, The graphics interact to the musics frequencies. The speed also alternates to the speed of the music. This hopefully will be a barrage of wonderful colors. 
+
 
 # Instructions
+-Open the folder in your compiler with all the necessary files which is in :MusicVisuals\java inside here there is the java file you need to execute.
+- You can execute the code from the file AudioVisualizer.java fouind in :MusicVisuals\java\src\c19748821
 
-# How it works
+# How the program works
+[![YouTube]()]()
 
-# What I am most proud of in the assignment
+Above is a showcase video.
 
-# Markdown Tutorial
-
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
+The way my music visualizer works is by calculating the values of fft bands and drawing circles with attributes based on those. The circles are connected with the center and each other by straight lines. The speed and radius of circles change as the song plays and it’s frequency changes. 
+The circle class contains attributes like xpos, ypos, speed, radius, etc and contains an update method which draws a cirlce. Circles are drawn in the draw method of AudioVisualizer class. There is an array of circles in AudioVisualizer class which contains all the circles to be drawn.
+The end product is that a mesh is produced which rotates and changes it’s size based on frequency of the music that’s playing
 
 ```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
+  //getting values of mix and frequencies from the audio player
+        float mixSound = getAudioPlayer().mix.get(2);
+        float radiusSoundFreq = getAudioPlayer().left.get(2);
+        float speedSoundFreq = getAudioPlayer().right.get(2);
+        float radiusSoundFreqSpeed = 200;
+        float speedSoundFreqSpeed = 1;
+
+        for(Circle circle : circles){
+            circle.update(circles, getAudioPlayer().mix.get(2));
+
+            //changing circle's radius and speed based on frequency of sound
+            circle.radius = (radiusSoundFreq * radiusSoundFreqSpeed);
+            circle.speed = circle.speed + ((speedSoundFreq * speedSoundFreqSpeed) / 4);
+
+            //setting stroke based on the mix
+            float hue = map(mixSound * 1000, -400, 300, 0, 255);
+            stroke(hue, 255, 255);
+            strokeWeight(2);
+
+            //drawing lines from center to the circle
+            line(0, 0, circle.xPos, circle.yPos);
+            strokeWeight(1);
+
+
 ```
 
-So is this without specifying the language:
+```Java
 
+ void update(Circle[] balls, float soundValue){
+        float hue = map(soundValue*500, -400, 400, 0, 255);
+
+        angle += speed;
+
+        //determining the x and y pos of circle based on the sound frequency value
+        xPos = (float) Math.cos(PApplet.radians(angle)) * roundRadius * 5f;
+        yPos = (float) Math.sin(PApplet.radians(angle)) * roundRadius * 3f;
+
+        for (Circle ball : balls) {
+            if (ball != this) {
+
+                //this code draws lines from each circle to every other circle, creating a mesh
+                gfx.stroke(hue, 100, 100);
+                gfx.line(xPos, yPos, ball.xPos, ball.yPos);
+            }
+        }
+
+        gfx.noStroke();
+        gfx.fill(hue, 255, 255);
+        gfx.circle(xPos, yPos, radius);
+        
 ```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
 
-This is an image using a relative URL:
+# Proud accoplishment
+Getting a better understanding go git, understanding the effectivness of committing and the ability to use  git a lot better.
+Creating a Mesh like structure around in my code to make this intricate design.
 
-![An image](images/p8.png)
+![Gitbash image](images/myimage.png)
 
-This is an image using an absolute URL:
 
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
 |Some stuff | Some more stuff in this column |
 
