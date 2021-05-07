@@ -19,6 +19,8 @@ Created a audio visualizer, for the intent purpose to test what I have learned w
 [![YouTube](https://user-images.githubusercontent.com/72251197/117396517-07233a80-aef2-11eb-94f9-08c61048241a.png)](https://www.youtube.com/watch?v=H9v1E1FZ_U0)
 
 Above is a showcase video.
+Tab to pause and play music shown in video timestamp in video description it's 1:32
+
 
 The way my music visualizer works is by calculating the values of fft bands and drawing circles with attributes based on those. The circles are connected with the center and each other by straight lines. The speed and radius of circles change as the song plays and it’s frequency changes. 
 The circle class contains attributes like xpos, ypos, speed, radius, etc and contains an update method which draws a cirlce. Circles are drawn in the draw method of AudioVisualizer class. There is an array of circles in AudioVisualizer class which contains all the circles to be drawn.
