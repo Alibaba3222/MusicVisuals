@@ -16,8 +16,7 @@ Created a audio visualizer, for the intent purpose to test what I have learned w
 - You can execute the code from the file AudioVisualizer.java fouind in :MusicVisuals\java\src\c19748821
 
 # How the program works
-[![YouTube](![image](https://user-images.githubusercontent.com/72251197/117396517-07233a80-aef2-11eb-94f9-08c61048241a.png)
-)](https://www.youtube.com/watch?v=H9v1E1FZ_U0)
+[![YouTube](![image](https://user-images.githubusercontent.com/72251197/117396517-07233a80-aef2-11eb-94f9-08c61048241a.png)](https://www.youtube.com/watch?v=H9v1E1FZ_U0)
 
 Above is a showcase video.
 
